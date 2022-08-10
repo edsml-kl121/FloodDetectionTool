@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Flood Tool &#8212; Flood Tool  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Flood Tool  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Flood Tool</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="flood-tool">
+<h1>Flood Tool<a class="headerlink" href="#flood-tool" title="Permalink to this headline">¶</a></h1>
+<p>This package implements a flood risk prediction and visualization tool.</p>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+</ul>
+</section>
+<section id="installation-instructions">
+<h2>Installation Instructions<a class="headerlink" href="#installation-instructions" title="Permalink to this headline">¶</a></h2>
+<p>How to install Flood tool’s bundle of software</p>
+<section id="ensure-python3-is-installed-on-your-machine">
+<h3>Ensure Python3 is installed on your machine<a class="headerlink" href="#ensure-python3-is-installed-on-your-machine" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Unix/MacOS:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">--version</span></code></div>
+<div class="line">Windows:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">py-</span> <span class="pre">-version</span></code></div>
+</div>
+</section>
+<section id="ensure-pip-can-be-ran-from-the-command-line">
+<h3>Ensure pip can be ran from the command line<a class="headerlink" href="#ensure-pip-can-be-ran-from-the-command-line" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Check this by running the following in your command line</div>
+</div>
+<div class="line-block">
+<div class="line">Unix/MacOS:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">--version</span></code></div>
+<div class="line">Windows:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">--version</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">and ensure it is up to date</div>
+</div>
+<div class="line-block">
+<div class="line">Unix/MacOS:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span> <span class="pre">setuptools</span> <span class="pre">wheel</span></code></div>
+<div class="line">Windows:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span> <span class="pre">setuptools</span> <span class="pre">wheel</span></code></div>
+</div>
+</section>
+<section id="create-a-virtual-environment-and-activate-it-optional">
+<h3>Create a virtual environment and activate it (optional)<a class="headerlink" href="#create-a-virtual-environment-and-activate-it-optional" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">This will allow for the flood tool package to be installed in an isolaed location for your particualr application. Rather than it being installed globally.</div>
+</div>
+<div class="line-block">
+<div class="line">Do this within the directory you want the package to be located on your machine.</div>
+</div>
+<div class="line-block">
+<div class="line">Unix/MacOS:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">flood_tool_env</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">tutorial_env/bin/activate</span></code></div>
+<div class="line">Windows:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">flood_tool_env</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">tutorial_env\Scripts\activate</span></code></div>
+</div>
+</section>
+<section id="clone-flood-tool-package-from-github">
+<h3>Clone flood_tool package from github<a class="headerlink" href="#clone-flood-tool-package-from-github" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Firstly, ensure git is installed on your machine</div>
+</div>
+<div class="line-block">
+<div class="line">Unix/MacOS:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code></div>
+<div class="line">Windows:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">If not installed, navigate to the installer.</div>
+</div>
+<div class="line-block">
+<div class="line">mac: <a class="reference external" href="https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect">https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect</a></div>
+<div class="line">Windows: <a class="reference external" href="https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect">https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect</a></div>
+</div>
+<div class="line-block">
+<div class="line">Once git is installed on your machine. Clone the Flood Tool package into your directory from the command line using:</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/ese-msc-2021/ads-deluge-wye.git</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">This will target the flood tool repository and create a clone (or copy) of the target repository in your machine.</div>
+</div>
+<div class="line-block">
+<div class="line">There should now be a directory called <code class="docutils literal notranslate"><span class="pre">ads-deluge-wye</span></code> which contains all the files needed for the package.</div>
+</div>
+</section>
+<section id="installng-requirements">
+<h3>Installng requirements<a class="headerlink" href="#installng-requirements" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Naviate to the package’ directory</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">ds-deluge-wye</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">Now install all the requirements needed for the package</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">You are now set up to use the Flood Tool package</div>
+</div>
+</section>
+</section>
+<section id="usage-guide">
+<h2>Usage guide<a class="headerlink" href="#usage-guide" title="Permalink to this headline">¶</a></h2>
+<p>Open jupyter notebook running following command in your terminal (it was installed with the package), in the directory where the flood tool package is located.</p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></p>
+<p>You can now interact with the notebooks that will visualise the data and interact with the package.</p>
+<p>This generates an interactive plot of the flood risk on a scale of 1 to 10 for postcodes in postcodes_sampled.csv, as well as the distribution of median house prices for these postcodes.</p>
+<div class="line-block">
+<div class="line">This notebook provides interactive plots that visualise the risk label and median house prices across England.</div>
+</div>
+<div class="line-block">
+<div class="line">This will highlight high flood risk zones or high impact areas, as well as areas where flooding is more likely.</div>
+</div>
+<div class="line-block">
+<div class="line">The notebook also allows the user to select a postcode from a list and plot it.</div>
+</div>
+<div class="line-block">
+<div class="line">(The code used mainly comes from the house_flood_interface.py file to make the visualiser to more clean.)</div>
+</div>
+<section id="plotting-the-maps-for-flood-risk-and-house-price">
+<h3>Plotting the Maps for flood_risk and house_price<a class="headerlink" href="#plotting-the-maps-for-flood-risk-and-house-price" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">This generates an interactive plot of the flood risk on a scale of 1 to 10 for postcodes in postcodes_sampled.csv, as well as the distribution of median house prices for these postcodes.</div>
+</div>
+<a class="reference internal image-reference" href="_images/risk_label.png"><img alt="_images/risk_label.png" src="_images/risk_label.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/house_price.png"><img alt="_images/house_price.png" src="_images/house_price.png" style="width: 600px;" /></a>
+</section>
+<section id="plotting-the-maps-for-flood-risk-and-house-price-with-postcode-markers">
+<h3>Plotting the Maps for flood_risk and house_price with postcode markers<a class="headerlink" href="#plotting-the-maps-for-flood-risk-and-house-price-with-postcode-markers" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">We used a widget package to allow user to select a postcode from the postcodes_unlabelled.csv and use the machine learning methods to predict the risk and housing prices at a specific postcode. The choice of the model can be changed in the house_flood_interface.py</div>
+</div>
+<a class="reference internal image-reference" href="_images/widget.png"><img alt="_images/widget.png" src="_images/widget.png" style="width: 600px;" /></a>
+<section id="river-rain-visualiser-ipynb">
+<h4>river_rain_visualiser.ipynb<a class="headerlink" href="#river-rain-visualiser-ipynb" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">This notebook produces maps for daily average raifall and river level data for a wet day and typical day. The data is plotted on a log10 scale for better visualization.</div>
+</div>
+<a class="reference internal image-reference" href="_images/rain_level.png"><img alt="_images/rain_level.png" src="_images/rain_level.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/river_level.png"><img alt="_images/river_level.png" src="_images/river_level.png" style="width: 600px;" /></a>
+<div class="line-block">
+<div class="line">The notebook also contains interactive map allowing the user to choose a time and see rainfall situation of the UK.</div>
+</div>
+<a class="reference internal image-reference" href="_images/all_int.png"><img alt="_images/all_int.png" src="_images/all_int.png" style="width: 600px;" /></a>
+<div class="line-block">
+<div class="line">Then, the notebook calculates a regional rainfall and river data average (50 km circle) around any given location. Finally, the notebook contains another interactive map where the user can choose a postcode, and a map marker would show up containing predicted flood risk, house price, regional average rainfall and river data. The background map is wet day rainfall.</div>
+</div>
+<a class="reference internal image-reference" href="_images/river_int.png"><img alt="_images/river_int.png" src="_images/river_int.png" style="width: 600px;" /></a>
+</section>
+<section id="holoview-ipynb">
+<h4>holoview.ipynb<a class="headerlink" href="#holoview-ipynb" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">This notebook allows the user to analyse how out rainfall and river data changes through time across England</div>
+</div>
+<div class="line-block">
+<div class="line">This first plot allows the user to analyse rainfall levels and nvestigate how it changes with dateTime and rainfall class.</div>
+</div>
+<a class="reference internal image-reference" href="_images/rainfall_time.png"><img alt="_images/rainfall_time.png" src="_images/rainfall_time.png" style="width: 600px;" /></a>
+<div class="line-block">
+<div class="line">The second plot allows the user to visualise how the distribution of rain classes vary across England through time.</div>
+</div>
+<a class="reference internal image-reference" href="_images/rain_class.png"><img alt="_images/rain_class.png" src="_images/rain_class.png" style="width: 600px;" /></a>
+</section>
+<section id="geodetic-transformations">
+<h4>Geodetic Transformations<a class="headerlink" href="#geodetic-transformations" title="Permalink to this headline">¶</a></h4>
+<p>For historical reasons, multiple coordinate systems exist in in current use in
+British mapping circles. The Ordnance Survey has been mapping the British Isles
+since the 18th Century and the last major retriangulation from 1936-1962 produced
+the Ordance Survey National Grid (otherwise known as <strong>OSGB36</strong>), which defined
+latitude and longitude for all points across the island of Great Britain <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.
+For convenience, a standard Transverse Mercator projection <a class="footnote-reference brackets" href="#id5" id="id2">2</a> was also defined,
+producing a notionally flat 2D gridded surface, with gradations called eastings
+and northings. The scale for these gradations was identified with metres, which
+allowed local distances to be defined with a fair degree of accuracy.</p>
+<p>The OSGB36 datum is based on the Airy Ellipsoid of 1830, which defines
+semimajor axes for its model of the earth, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, a scaling
+factor <span class="math notranslate nohighlight">\(F_0\)</span> and ellipsoid height, <span class="math notranslate nohighlight">\(H\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a &amp;= 6377563.396, \\
+b &amp;= 6356256.910, \\
+F_0 &amp;= 0.9996012717, \\
+H &amp;= 24.7.\end{split}\]</div>
+<p>The point of origin for the transverse Mercator projection is defined in the
+Ordnance Survey longitude-latitude and easting-northing coordinates as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\phi^{OS}_0 &amp;= 49^\circ \mbox{ north}, \\
+\lambda^{OS}_0 &amp;= 2^\circ \mbox{ west}, \\
+E^{OS}_0 &amp;= 400000 m, \\
+N^{OS}_0 &amp;= -100000 m.\end{split}\]</div>
+<p>More recently, the world has gravitated towards the use of satellite based GPS
+equipment, which uses the (globally more appropriate) World Geodetic System
+1984 (also known as <strong>WGS84</strong>). This datum uses a different ellipsoid, which offers a
+better fit for a global coordinate system (as well as North America). Its key
+properties are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a_{WGS} &amp;= 6378137,, \\
+b_{WGS} &amp;= 6356752.314, \\
+F_0 &amp;= 0.9996.\end{split}\]</div>
+<p>For a given point on the WGS84 ellipsoid, an approximate mapping to the
+OSGB36 datum can be found using a Helmert transformation <a class="footnote-reference brackets" href="#id6" id="id3">3</a>,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}^{OS} = \mathbf{t}+\mathbf{M}\mathbf{x}^{WGS}.\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> denotes a coordinate in Cartesian space (i.e in 3D)
+as given by the (invertible) transformation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nu &amp;= \frac{aF_0}{\sqrt{1-e^2\sin^2(\phi^{OS})}} \\
+x &amp;= (\nu+H) \sin(\lambda)\cos(\phi) \\
+y &amp;= (\nu+H) \cos(\lambda)\cos(\phi) \\
+z &amp;= ((1-e^2)\nu+H)\sin(\phi)\end{split}\]</div>
+<p>and the transformation parameters are</p>
+<div class="math notranslate nohighlight">
+\begin{eqnarray*}
+\mathbf{t} &amp;= \left(\begin{array}{c}
+-446.448\\ 125.157\\ -542.060
+\end{array}\right),\\
+\mathbf{M} &amp;= \left[\begin{array}{ c c c }
+1+s&amp; -r_3&amp; r_2\\
+r_3 &amp; 1+s &amp; -r_1 \\
+-r_2 &amp; r_1 &amp; 1+s
+\end{array}\right], \\
+s &amp;= 20.4894\times 10^{-6}, \\
+\mathbf{r} &amp;= [0.1502'', 0.2470'', 0.8421''].
+\end{eqnarray*}</div><p>Given a latitude, <span class="math notranslate nohighlight">\(\phi^{OS}\)</span> and longitude, <span class="math notranslate nohighlight">\(\lambda^{OS}\)</span> in the
+OSGB36 datum, easting and northing coordinates, <span class="math notranslate nohighlight">\(E^{OS}\)</span> &amp; <span class="math notranslate nohighlight">\(N^{OS}\)</span>
+can then be calculated using the following formulae (see “A guide to coordinate
+systems in Great Britain, Appendix C1):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\rho &amp;= \frac{aF_0(1-e^2)}{\left(1-e^2\sin^2(\phi^{OS})\right)^{\frac{3}{2}}} \\
+\eta &amp;= \sqrt{\frac{\nu}{\rho}-1} \\
+M &amp;= bF_0\left[\left(1+n+\frac{5}{4}n^2+\frac{5}{4}n^3\right)(\phi^{OS}-\phi^{OS}_0)\right. \\
+&amp;\quad-\left(3n+3n^2+\frac{21}{8}n^3\right)\sin(\phi-\phi_0)\cos(\phi^{OS}+\phi^{OS}_0) \\
+&amp;\quad+\left(\frac{15}{8}n^2+\frac{15}{8}n^3\right)\sin(2(\phi^{OS}-\phi^{OS}_0))\cos(2(\phi^{OS}+\phi^{OS}_0)) \\
+&amp;\left.\quad-\frac{35}{24}n^3\sin(3(\phi-\phi_0))\cos(3(\phi^{OS}+\phi^{OS}_0))\right] \\
+I &amp;= M + N^{OS}_0 \\
+II &amp;= \frac{\nu}{2}\sin(\phi^{OS})\cos(\phi^{OS}) \\
+III &amp;= \frac{\nu}{24}\sin(\phi^{OS})cos^3(\phi^{OS})(5-\tan^2(phi^{OS})+9\eta^2) \\
+IIIA &amp;= \frac{\nu}{720}\sin(\phi^{OS})cos^5(\phi^{OS})(61-58\tan^2(\phi^{OS})+\tan^4(\phi^{OS})) \\
+IV &amp;= \nu\cos(\phi^{OS}) \\
+V &amp;= \frac{\nu}{6}\cos^3(\phi^{OS})\left(\frac{\nu}{\rho}-\tan^2(\phi^{OS})\right) \\
+VI &amp;= \frac{\nu}{120}\cos^5(\phi^{OS})(5-18\tan^2(\phi^{OS})+\tan^4(\phi^{OS}) \\
+&amp;\quad+14\eta^2-58\tan^2(\phi^{OS})\eta^2) \\
+E^{OS} &amp;= E^{OS}_0+IV(\lambda^{OS}-\lambda^{OS}_0)+V(\lambda-\lambda^{OS}_0)^3+VI(\lambda^{OS}-\lambda^{OS}_0)^5 \\
+N^{OS} &amp;= I + II(\lambda^{OS}-\lambda^{OS}_0)^2+III(\lambda-\lambda^{OS}_0)^4+IIIA(\lambda^{OS}-\lambda^{OS}_0)^6\end{split}\]</div>
+<p>The inverse transformation can be generated iteratively using a fixed point process:</p>
+<ol class="arabic simple">
+<li><p>Set <span class="math notranslate nohighlight">\(M=0\)</span> and <span class="math notranslate nohighlight">\(\phi^{OS} = \phi_0^{OS}\)</span>.</p></li>
+<li><p>Update <span class="math notranslate nohighlight">\(\phi_{i+1}^{OS} = \frac{N-N_0-M}{aF_0}+\phi_i^{OS}\)</span></p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(M\)</span> using the formula above.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\textrm{abs}(N-N_0-M)&gt; 0.01 mm\)</span> go to 2, otherwise halt.</p></li>
+</ol>
+<p>With <span class="math notranslate nohighlight">\(M\)</span> calculated we now improve our estimate of <span class="math notranslate nohighlight">\(\phi^{OS}\)</span>. First calculate
+<span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span> using our previous formulae. Next</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}VII &amp;= \frac{\tan(\phi^{OS})}{2\rho\nu},\\
+VIII &amp;= \frac{\tan(\phi^{OS})}{24\rho\nu^3}\left(5+3\tan^2(\phi^{OS})+\eta^2-9\tan^2(\phi^{OS})\eta^2\right),\\
+IX &amp;= \frac{\tan(\phi^{OS})}{720\rho\nu^5}\left(61+90\tan^2(\phi^{OS})+45\tan^4(\phi^{OS})\right),\\
+X &amp;= \frac{\sec\phi^{OS}}{\nu}, \\
+XI &amp;= \frac{\sec\phi^{OS}}{6\nu^3}\left(\frac{\nu}{\rho}+2\tan^2(\phi^{OS})\right), \\
+XII &amp;= \frac{\sec\phi^{OS}}{120\nu^5}\left(5+28\tan^2(\phi^{OS})+24\tan^4(\phi^{OS})\right), \\
+XIIA &amp;= \frac{\sec\phi^{OS}}{5040\nu^5}\left(61+662\tan^2(\phi^{OS})+1320\tan^4(\phi^{OS})+720\tan^6(\phi^{OS})\right).\end{split}\]</div>
+<p>Finally, the corrected values for <span class="math notranslate nohighlight">\(\phi^{OS}\)</span> and <span class="math notranslate nohighlight">\(\lambda^{OS}\)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\phi_{\textrm{final}}^{OS} &amp;= \phi^{OS} -VII(E-E_0)^2 +VIII(E-E_0)^4 -IX(E-E_0)^6, \\
+\lambda_{\textrm{final}}^{OS} &amp;= \lambda_0^{OS}+X(E-E_0)-XI(E-E_0)^3+ XII(E-E_0)^5-XII(E-E_0)^7.\end{split}\]</div>
+</section>
+<section id="function-apis">
+<h4>Function APIs<a class="headerlink" href="#function-apis" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="module-tool">
+<span id="flood-tool-tool-module"></span><h3>flood_tool.tool module<a class="headerlink" href="#module-tool" title="Permalink to this headline">¶</a></h3>
+<p>Example module in template package.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tool.Tool">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tool.</span></span><span class="sig-name descname"><span class="pre">Tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postcode_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">household_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to interact with a postcode database file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>postcode_file</strong> (<em>str</em><em>, </em><em>optional</em>) – Filename of a .csv file containing geographic location
+data for postcodes.</p></li>
+<li><p><strong>sample_labels</strong> (<em>str</em><em>, </em><em>optional</em>) – Filename of a .csv file containing sample data on property
+values and flood risk labels.</p></li>
+<li><p><strong>household_file</strong> (<em>str</em><em>, </em><em>optional</em>) – Filename of a .csv file containing information on households
+by postcode.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_annual_flood_risk">
+<span class="sig-name descname"><span class="pre">get_annual_flood_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_annual_flood_risk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a series of estimates of the total property values of a
+collection of postcodes.</p>
+<p>Risk is defined here as a damage coefficient multiplied by the
+value under threat multiplied by the probability of an event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>postcodes</strong> (<em>sequence of strs</em>) – Sequence of postcodes.</p></li>
+<li><p><strong>risk_labels</strong> (<em>pandas.Series</em><em> (</em><em>optional</em><em>)</em>) – Series containing flood probability classifiers, as
+predicted by get_flood_probability.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series of total annual flood risk estimates indexed by locations.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_easting_northing">
+<span class="sig-name descname"><span class="pre">get_easting_northing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postcodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_easting_northing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a frame of OS eastings and northings from a collection
+of input postcodes.
+:param postcodes: Sequence of postcodes.
+:type postcodes: sequence of strs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>DataFrame containing only OSGB36 easthing and northing indexed
+by the input postcodes. Invalid postcodes (i.e. not in the
+input unlabelled postcodes file) return as NaN.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_flood_class">
+<span class="sig-name descname"><span class="pre">get_flood_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_flood_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate series predicting flood probability classification
+for a collection of poscodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>postcodes</strong> (<em>sequence of strs</em>) – Sequence of postcodes.</p></li>
+<li><p><strong>method</strong> (<em>int</em><em> (</em><em>optional</em><em>)</em>) – optionally specify (via a value in
+self.get_flood_probability_methods) the classification
+method to be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series of flood risk classification labels indexed by postcodes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_flood_class_methods">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_flood_class_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_flood_class_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dictionary of available flood probablity classification methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Dictionary mapping classification method names (which have</dt><dd><p>no inate meaning) on to an identifier to be passed to the
+get_flood_probability method.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_house_price_methods">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_house_price_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_house_price_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dictionary of available flood house price regression methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Dictionary mapping regression method names (which have</dt><dd><p>no inate meaning) on to an identifier to be passed to the
+get_median_house_price_estimate method.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_lat_long">
+<span class="sig-name descname"><span class="pre">get_lat_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postcodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_lat_long" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a frame containing GPS latitude and longitude information for a
+collection of of postcodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>postcodes</strong> (<em>sequence of strs</em>) – Sequence of postcodes.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DataFrame containing only WGS84 latitude and longitude pairs for
+the input postcodes. Invalid postcodes (i.e. not in the
+input unlabelled postcodes file) return as NAN.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_median_house_price_estimate">
+<span class="sig-name descname"><span class="pre">get_median_house_price_estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_median_house_price_estimate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate series predicting median house price for a collection
+of poscodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>postcodes</strong> (<em>sequence of strs</em>) – Sequence of postcodes.</p></li>
+<li><p><strong>method</strong> (<em>int</em><em> (</em><em>optional</em><em>)</em>) – optionally specify (via a value in
+self.get_house_price_methods) the regression
+method to be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series of median house price estimates indexed by postcodes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tool.Tool.get_total_value">
+<span class="sig-name descname"><span class="pre">get_total_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tool.Tool.get_total_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a series of estimates of the total property values
+of a collection of postcode units or sectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>locations</strong> (<em>sequence of strs</em>) – Sequence of postcode units or sectors</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series of total property value estimates indexed by locations.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="flood-tool-geo-module">
+<h3>flood_tool.geo module<a class="headerlink" href="#flood-tool-geo-module" title="Permalink to this headline">¶</a></h3>
+<p>Module containing functions that are called in the tool.Tool class</p>
+<span class="target" id="module-geo"></span><dl class="py function">
+<dt class="sig sig-object py" id="geo.deg">
+<span class="sig-prename descclassname"><span class="pre">geo.</span></span><span class="sig-name descname"><span class="pre">deg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geo.deg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert degrees into radians.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>deg</strong> (<em>float/arraylike</em>) – Value(s) in degrees</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Equivalent values in radians.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="geo.lat_long_to_xyz">
+<span class="sig-prename descclassname"><span class="pre">geo.</span></span><span class="sig-name descname"><span class="pre">lat_long_to_xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rads=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datum=&lt;geo.Datum</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geo.lat_long_to_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert latitude/longitude in a given datum into
+Cartesian (x, y, z) coordinates.</p>
+<p>Datum in osgb36</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="geo.rad">
+<span class="sig-prename descclassname"><span class="pre">geo.</span></span><span class="sig-name descname"><span class="pre">rad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geo.rad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert degrees/minutes/seconds into radians.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deg</strong> (<em>float/arraylike</em>) – Value(s) in degrees</p></li>
+<li><p><strong>min</strong> (<em>float/arraylike</em>) – Value(s) in minutes</p></li>
+<li><p><strong>sec</strong> (<em>float/arraylike</em>) – Value(s) in (angular) seconds</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Equivalent values in radians</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="geo.xyz_to_lat_long">
+<span class="sig-prename descclassname"><span class="pre">geo.</span></span><span class="sig-name descname"><span class="pre">xyz_to_lat_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rads=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datum=&lt;geo.Datum</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geo.xyz_to_lat_long" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Cartesian (x,y,z) coordinates into
+latitude and longitude in a given datum.</p>
+<p>Datum in osgb36</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">geo.</span></span><span class="sig-name descname"><span class="pre">get_easting_northing_from_gps_lat_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get OSGB36 easting/northing from GPS latitude and
+longitude pairs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phi</strong> (<em>float/arraylike</em>) – GPS (i.e. WGS84 datum) latitude value(s)</p></li>
+<li><p><strong>lam</strong> (<em>float/arraylike</em>) – GPS (i.e. WGS84 datum) longitude value(s).</p></li>
+<li><p><strong>rads</strong> (<em>bool</em><em> (</em><em>optional</em><em>)</em>) – If true, specifies input is is radians.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>numpy.ndarray</em> – Easting values (in m)</p></li>
+<li><p><em>numpy.ndarray</em> – Northing values (in m)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_easting_northing_from_gps_lat_long</span><span class="p">([</span><span class="mf">55.5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.54</span><span class="p">])</span>
+<span class="go">(array([429157.0]), array([623009]))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">geo.</span></span><span class="sig-name descname"><span class="pre">get_gps_lat_long_from_easting_northing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">east</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">north</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get OSGB36 easting/northing from GPS latitude and
+longitude pairs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>east</strong> (<em>float/arraylike</em>) – OSGB36 easting value(s) (in m).</p></li>
+<li><p><strong>north</strong> (<em>float/arraylike</em>) – OSGB36 easting value(s) (in m).</p></li>
+<li><p><strong>rads</strong> (<em>bool</em><em> (</em><em>optional</em><em>)</em>) – If true, specifies ouput is is radians.</p></li>
+<li><p><strong>dms</strong> (<em>bool</em><em> (</em><em>optional</em><em>)</em>) – If true, output is in degrees/minutes/seconds. Incompatible
+with rads option.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>numpy.ndarray</em> – GPS (i.e. WGS84 datum) latitude value(s).</p></li>
+<li><p><em>numpy.ndarray</em> – GPS (i.e. WGS84 datum) longitude value(s).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_gps_lat_long_from_easting_northing</span><span class="p">([</span><span class="mi">429157</span><span class="p">],</span> <span class="p">[</span><span class="mi">623009</span><span class="p">])</span>
+<span class="go">(array([55.5]), array([-1.540008]))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>A guide to coordinate systems in Great Britain, Ordnance Survey, <a class="reference external" href="https://webapps.bgs.ac.uk/data/webservices/convertForm.cfm">https://webapps.bgs.ac.uk/data/webservices/convertForm.cfm</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Map projections - A Working Manual, John P. Snyder, <a class="reference external" href="https://doi.org/10.3133/pp1395">https://doi.org/10.3133/pp1395</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Computing Helmert transformations, G Watson, <a class="reference external" href="http://www.maths.dundee.ac.uk/gawatson/helmertrev.pdf">http://www.maths.dundee.ac.uk/gawatson/helmertrev.pdf</a></p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">4</span></dt>
+<dd><p>Scickit Learn: Simple and efficient tools for predictive data analysis, <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a></p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">4</span></dt>
+<dd><p>Information on postcode validity, <a class="reference external" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/283357/ILRSpecification2013_14Appendix_C_Dec2012_v1.pdf">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/283357/ILRSpecification2013_14Appendix_C_Dec2012_v1.pdf</a></p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">5</span></dt>
+<dd><p>Converting British National Grid Co-ordinates to WGS64 Latitude and Longitude, <a class="reference external" href="https://stackoverflow.com/questions/68135249/converting-british-national-grid-co-ordinates-to-wgs64-latitude-and-longitude-in">https://stackoverflow.com/questions/68135249/converting-british-national-grid-co-ordinates-to-wgs64-latitude-and-longitude-in</a></p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">6</span></dt>
+<dd><p>Converting Latitude and Longitude to British National Grid, <a class="reference external" href="http://blogs.casa.ucl.ac.uk/2014/12/26/converting-latitude-and-longitude-to-british-national-grid-2/">http://blogs.casa.ucl.ac.uk/2014/12/26/converting-latitude-and-longitude-to-british-national-grid-2/</a></p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Flood Tool</a><ul>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#installation-instructions">Installation Instructions</a><ul>
+<li><a class="reference internal" href="#ensure-python3-is-installed-on-your-machine">Ensure Python3 is installed on your machine</a></li>
+<li><a class="reference internal" href="#ensure-pip-can-be-ran-from-the-command-line">Ensure pip can be ran from the command line</a></li>
+<li><a class="reference internal" href="#create-a-virtual-environment-and-activate-it-optional">Create a virtual environment and activate it (optional)</a></li>
+<li><a class="reference internal" href="#clone-flood-tool-package-from-github">Clone flood_tool package from github</a></li>
+<li><a class="reference internal" href="#installng-requirements">Installng requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage-guide">Usage guide</a><ul>
+<li><a class="reference internal" href="#plotting-the-maps-for-flood-risk-and-house-price">Plotting the Maps for flood_risk and house_price</a></li>
+<li><a class="reference internal" href="#plotting-the-maps-for-flood-risk-and-house-price-with-postcode-markers">Plotting the Maps for flood_risk and house_price with postcode markers</a><ul>
+<li><a class="reference internal" href="#river-rain-visualiser-ipynb">river_rain_visualiser.ipynb</a></li>
+<li><a class="reference internal" href="#holoview-ipynb">holoview.ipynb</a></li>
+<li><a class="reference internal" href="#geodetic-transformations">Geodetic Transformations</a></li>
+<li><a class="reference internal" href="#function-apis">Function APIs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-tool">flood_tool.tool module</a></li>
+<li><a class="reference internal" href="#flood-tool-geo-module">flood_tool.geo module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Flood Tool  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Flood Tool</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+    </div>
+  </body>
+</html>
